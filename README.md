@@ -19,11 +19,13 @@
 
 ![imagen](https://user-images.githubusercontent.com/2046110/187799395-4f120f29-735b-4f71-b59b-b95ccdd51656.png)
 
-4. Mediante Draw.io o una solución equivalente, dibujar la arquitectura final que tendríavuestro proyecto una vez ejecutada la segunda, tercera y cuarta parte de esta práctica.Se pideuna única arquitectura unificadacon las relacionesentre los servicios, notres arquitecturas por separado.
-
-
-5. El entregable de este último punto podrá ser una imagen en jpg o png, una slide depowerpoint o un archivo editable de draw.io.
+4. Mediante Draw.io o una solución equivalente, dibujar la arquitectura final que tendría vuestro proyecto una vez ejecutada la segunda, tercera y cuarta parte de esta práctica. Se pide una única arquitectura unificada con las relaciones entre los servicios, no tres arquitecturas por separado.
 ![practica-gcp-infraestructura](https://user-images.githubusercontent.com/2046110/187799768-dd0bbd6e-a043-4add-bfd8-75444271102c.jpg)
+
+
+5. El entregable de este último punto podrá ser una imagen en jpg o png, una slide de powerpoint o un archivo editable de draw.io.
+
+La imagen anterior está disponible también en este repo con el nombre `practica-gcp-infraestructura.jpg`
 
 
 ## Segunda parte
@@ -39,12 +41,12 @@
 4. Se deben crear dos bases de datos llamadas “google” y “cloud”.
 ![imagen](https://user-images.githubusercontent.com/2046110/187801196-47d84f5c-34cc-4516-b0b5-97da049ccf46.png)
 
-5. Procede a exportar exclusivamente estas dos bases de datos mediante la funciónexportar, en formato SQL. Para lo cual deberás crear un segmento de Cloud Storage.
+5. Procede a exportar exclusivamente estas dos bases de datos mediante la función exportar, en formato SQL. Para lo cual deberás crear un segmento de Cloud Storage.
 6. Una vez finalizada la exportación, realiza una importación de dicho fichero.
 
 ![imagen](https://user-images.githubusercontent.com/2046110/187801309-3d32847b-add0-4f83-8bfa-08c238391bd7.png)
 
-7. Se comprobarán los logs de auditación para ver si se ha realizado la importaciónsatisfactoriamente.
+7. Se comprobarán los logs de auditación para ver si se ha realizado la importación satisfactoriamente.
 8. Por último, (des)escala la máquina de base de datos a la configuración de CPU y RAMmás baja.
 ![imagen](https://user-images.githubusercontent.com/2046110/187801760-cba705a3-bce3-4c16-8fbc-e76b367cd964.png)
 
@@ -54,7 +56,7 @@
 
 ![imagen](https://user-images.githubusercontent.com/2046110/187801878-2033961c-6a1b-4e59-994d-19c2226d064b.png)
 
-3. Crear un grupo de instancias de autoescalado basado en consumos de CPU muy bajopara forzar un escalado rápido, configurando el tiempo de enfriamiento oportuno paranuestra imagen y que cuente el grupo con un mínimo de 1 instancia y un máximo de 4.
+3. Crear un grupo de instancias de autoescalado basado en consumos de CPU muy bajo para forzar un escalado rápido, configurando el tiempo de enfriamiento oportuno para nuestra imagen y que cuente el grupo con un mínimo de 1 instancia y un máximo de 4.
 
 > En esta captura tengo la duda de que aparecen 7 instancias en la parte izquierda aunque el límite es de 4 para el autoescalado como se muestra a la derecha
 ![imagen](https://user-images.githubusercontent.com/2046110/187802184-ecd3616a-4485-43e6-a2ae-120b3f9b422c.png)
@@ -63,7 +65,7 @@ Para asegurar el correcto funcionamiento del script del siguiente punto y que si
 ![imagen](https://user-images.githubusercontent.com/2046110/187803275-d9d4467a-1e60-4af0-9304-0a0197a0408c.png)
 
 
-4. Crear una máquina virtual independiente en Compute Engine, que en su directorio localtenga un sencillo script para comprobar si funciona el autoescalado (atacando a la ippropia del grupo de instancias).
+4. Crear una máquina virtual independiente en Compute Engine, que en su directorio localtenga un sencillo script para comprobar si funciona el autoescalado (atacando a la ip propia del grupo de instancias).
 
 ![imagen](https://user-images.githubusercontent.com/2046110/187802633-a6c305ec-c002-4055-bde8-87d3b3679ab6.png)
 ![imagen](https://user-images.githubusercontent.com/2046110/187802838-b148ef69-fbc0-4791-80dc-66332f36ab39.png)
@@ -81,23 +83,23 @@ Para asegurar el correcto funcionamiento del script del siguiente punto y que si
 URL de acceso a la aplicación:
 https://practica-gcp-roberto.ew.r.appspot.com/
 
-4. Vuelve a hacer el deploy de la aplicación, pero esta vez no sobre el servicio “default”,sino sobre un servicio nuevo llamado “practica” y personaliza el nombre de la versiónllamándola “version-1-0-0”.○Puedes ver los parámetros que puede tener el app.yaml en la documentación:https://cloud.google.com/appengine/docs/standard/python/config/appref
+4. Vuelve a hacer el deploy de la aplicación, pero esta vez no sobre el servicio “default”,sino sobre un servicio nuevo llamado “practica” y personaliza el nombre de la versión llamándola “version-1-0-0”.○Puedes ver los parámetros que puede tener el app.yaml en la documentación:https://cloud.google.com/appengine/docs/standard/python/config/appref
 5. Repite el paso anterior, pero esta vez llamando a la version “version-2-0-0”.
-6. Una vez subida la segunda versión, cambia la distribución del tráfico de forma aleatoriaal 50% entre las dos versiones.
+6. Una vez subida la segunda versión, cambia la distribución del tráfico de forma aleatoria al 50% entre las dos versiones.
 ![imagen](https://user-images.githubusercontent.com/2046110/187804199-e82518ae-763d-414f-acfa-91a89e0a63b9.png)
 
 
 ## Bonus
 
-1. Crear una configuración de Terraform en un único fichero main.tf (que será el entregablede este apartado).
+1. Crear una configuración de Terraform en un único fichero main.tf (que será el entregable de este apartado).
 2. Añadir a la configuración las instrucciones para que utilice la librería de Google Cloud.
 3. Crear una cuenta de servicio y descargar el fichero JSON con las credenciales.
 4. Añadir a la configuración el proyecto, región, zona y credenciales.
 5. Crear los siguientes recursos con configuración libre (nombres, tipos de máquinas,so,etc.):
   - Nueva red virtual.
   - Bucket de almacenamiento en Cloud Storage.
-  - Aprovisionar una máquina virtual enlazada con la red virtual creadaanteriormente.
+  - Aprovisionar una máquina virtual enlazada con la red virtual creada anteriormente.
 6. Ejecutar Terraform para crear los recursos.
 7. Eliminar los recursos con Terraform.
 
-El archivo main.tf está subido a este repositorio en el directorio terraform
+El archivo `main.tf` está subido a este repositorio en el directorio `terraform`
