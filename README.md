@@ -11,7 +11,7 @@
 
 ## Primera parte
 1. Crear un proyecto con vuestras cuentas personales.
-2. Dar acceso completo al proyecto al profesor para su revisión (javioreto@gmail.com).
+2. Dar acceso completo al proyecto al profesor para su revisión 
 
 ![imagen](https://user-images.githubusercontent.com/2046110/187798959-1a9b6328-2ad3-4e72-a59c-7a0d2eb4c8a4.png)
 
